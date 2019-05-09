@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Responsive Design + Media Queries + Bootstrap</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        probando otro que incluye mas archivos-->
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+      
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="css.css">
+      
+      <script>
+        //inicializa popover y tooltips
+        $(document).ready(function(){
+          $('#poparadivertirse').popover(); 
+          $('[data-toggle="tooltip"]').tooltip(); 
+        });
+      </script>
+    
+    </head>
+
+    <body>
+      
+      <!--NAVEGADOR-->
+      <section id="navegador">
+        
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex justify-content-center fixed-top">
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+            
+            <ul class="navbar-nav">
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#cards-integrantes">Integrantes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#web-responsive">Responsive</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#media-queries">MediaQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#teoria-b">Bootstrap</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#sistema-grilla-b">Grilla</a>
+                </li>
+              
+                <li class="nav-item dropdown">
+                  
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Componentes</a>
+                    
+                    <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#comp-carousel">Carousel</a>
+                            <a class="dropdown-item" href="#comp-collapse">Collapse</a>
+                            <a class="dropdown-item" href="#comp-tablas">Tablas</a>
+                            <a class="dropdown-item" href="#comp-boton">Botones</a>
+                            <a class="dropdown-item" href="#comp-pagination">Paginación</a>
+                            <a class="dropdown-item" href="#comp-menu">Menúes</a>
+                            <a class="dropdown-item" href="#comp-form">Formularios</a>
+                            <a class="dropdown-item" href="#comp-card">Cards</a>
+                    </div>
+                </li>
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="#grid">Vs.Grid</a>
+                </li>
+              
+            </ul>
+            
+          </div>
+          
+        </nav>
+        
+      </section>
+      
+      <!--INICIO-->
+      <section class="jumbotron jumbotron-fluid" id="inicio">
+          <!-- LOGO -->
+          <div id="logo" class="d-flex justify-content-center"> <!-- LOGO HECHO EN VECTORES -->
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="430" class="img-fluid mb-3 mb-md-0" role="img" viewBox="0 0 1024 860" focusable="false">
+                    <title>Bootstrap</title>
+                    <defs>
+                    <linearGradient id="c" x1="50%" x2="50%" y1="0%" y2="100%">
+                        <stop offset="0%" stop-color="#5C24AE"></stop>
+                        <stop offset="100%" stop-color="#30135A"></stop>
+                    </linearGradient>
+                    <path id="b" d="M355.967 242.807l-322 216.395c-44.275 29.754-44.275 78.443 0 108.197l322 216.395c44.275 29.754 116.725 29.754 161 0l322-216.395c44.275-29.754 44.275-78.443 0-108.197l-322-216.395c-44.275-29.754-116.725-29.754-161 0z"></path>
+                    <filter id="a" width="108%" height="112%" x="-4%" y="-4.3%" filterUnits="objectBoundingBox">
+                        <feOffset dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"></feGaussianBlur>
+                        <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                    </filter>
+                    <linearGradient id="f" x1="50%" x2="50%" y1="-17.303%" y2="100%">
+                        <stop offset="0%" stop-color="#7331D4"></stop>
+                        <stop offset="100%" stop-color="#461B84"></stop>
+                    </linearGradient>
+                    <path id="e" d="M355.967 132.807l-322 216.395c-44.275 29.754-44.275 78.443 0 108.197l322 216.395c44.275 29.754 116.725 29.754 161 0l322-216.395c44.275-29.754 44.275-78.443 0-108.197l-322-216.395c-44.275-29.754-116.725-29.754-161 0z"></path>
+                    <filter id="d" width="108%" height="112%" x="-4%" y="-4.3%" filterUnits="objectBoundingBox">
+                        <feOffset dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"></feGaussianBlur>
+                        <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                    </filter>
+                    <linearGradient id="i" x1="50%" x2="50%" y1="0%" y2="100%">
+                        <stop offset="0%" stop-color="#905BDD"></stop>
+                        <stop offset="100%" stop-color="#5521A0"></stop>
+                    </linearGradient>
+                    <path id="h" d="M355.967 22.807l-322 216.395c-44.275 29.754-44.275 78.443 0 108.197l322 216.395c44.275 29.754 116.725 29.754 161 0l322-216.395c44.275-29.754 44.275-78.443 0-108.197l-322-216.395c-44.275-29.754-116.725-29.754-161 0z"></path>
+                    <filter id="g" width="108%" height="112%" x="-4%" y="-4.3%" filterUnits="objectBoundingBox">
+                        <feOffset dy="10" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                        <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"></feGaussianBlur>
+                        <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"></feColorMatrix>
+                    </filter>
+                    </defs>
+                    <g fill="none">
+                        <g transform="translate(75 23)">
+                            <use fill="#000" filter="url(#a)" xlink:href="#b"></use>
+                            <use fill="url(#c)" xlink:href="#b"></use>
+                        </g>
+                        <g transform="translate(75 23)">
+                            <use fill="#000" filter="url(#d)" xlink:href="#e"></use>
+                            <use fill="url(#f)" xlink:href="#e"></use>
+                        </g>
+                        <g transform="translate(75 23)">
+                            <use fill="#000" filter="url(#g)" xlink:href="#h"></use>
+                            <use fill="url(#i)" xlink:href="#h"></use>
+                        </g>
+                        <path fill="#FFF" d="M558.273 447.667L308.036 279.5l97.982-65.847c42.83-28.784 96.789-31.483 134.245-6.311 26.044 17.502 31.214 46.615 11.444 65.724l1.389.934c38.324-19.932 84.107-18.527 117.396 3.845 44.046 29.6 38.671 68.419-14.561 104.193l-97.658 65.629zM447.112 331.01l49.942-33.562c36.935-24.822 42.31-48.249 15.224-66.451-24.798-16.665-55.49-14.453-85.851 5.95l-59.641 40.081 80.326 53.982zm176.532 35.663c37.63-25.289 42.136-48.832 13.203-68.276-28.932-19.444-64.163-15.614-104.042 11.186l-58.789 39.508 87.92 59.084 61.708-41.502z">
+                        </path>
+                    </g>
+                </svg>
+            </div>
+          <!-- TITULO PRINCIPAL -->
+          <h1 class="display-4 text-center font-weight-bolder">Responsive Design + Media Queries + Bootstrap</h1> 
+      </section>
+      
+      
+      
+      
+      <div class="container"> <!-- INICIO DEL CONTAINER PRINCIPAL -->
+       
+        
+        
+        
+      <!-- CARDS INTEGRANTES -->
+      <section id="cards-integrantes">
+
+          <h1 class="display-4 text-center">Integrantes</h1>
+
+          <!-- PRIMER FILA DE CARDS/INTEGRANTES -->
+          <div class="container card-columns row d-flex justify-content-around">
+            
+               <div class="card col-3">
+                 <img class="card-img-top img-fluid" src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fjulio-cordoba.jpg?1557016896816">
+                 <div class="card-body">
+                   <h5 class="card-title">Julio</h5>
+                 </div>
+               </div>
+
+              <div class="card col-3">
+                <img class="card-img-top img-fluid" src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fgabi-feldman.jpg?1556931795075">
+                <div class="card-body">
+                  <h5 class="card-title">Gabriel</h5>
+                </div>
+              </div>
+
+              <div class="card col-3">
+                <img class="card-img-top img-fluid" src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Ffacu-guena.jpg?1556931769151">
+                <div class="card-body">
+                  <h5 class="card-title">Facundo</h5>
+                </div>
+             </div>
+            
+          </div>
+          <!-- SEGUNDA FILA DE CARDS/INTEGRANTES -->
+          <div class="container card-columns row d-flex justify-content-around">
+
+                <div class="card col-3">
+                    <img class="card-img-top img-fluid" src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Flucero-nadia.jpg?1556932065637">
+                    <div class="card-body">
+                    <h5 class="card-title">Nadia</h5>
+                    </div>
+                </div>
+
+              <div class="card col-3">
+                <img class="card-img-top img-fluid" src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fleonel-umerez.jpg?1557173960019">
+                <div class="card-body">
+                  <h5 class="card-title">Leonel</h5>
+                </div>
+              </div>
+
+              <div class="card col-3">
+                <img class="card-img-top img-fluid" src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Froberto-zitto.jpg?1556931806080">
+                <div class="card-body">
+                  <h5 class="card-title">Roberto</h5>
+                </div>
+              </div>
+
+          </div>
+        
+      </section>
+      
+       <!-- TEORÍA RESPONSIVE WEB DESIGN -->
+      <section id="web-responsive">
+
+        <h1 class="display-4 ">Responsive Web Design</h1>
+
+        <h2>¿Qué es?</h2>
+        <p class="text-left"> Es una técnica de diseño y desarrollo web que mediante el uso de estructuras flexibles (contenedores flexibles, imágenes y video flexibles) y junto con Media Queries especificados en CSS, logran adaptar un sitio web al entorno del dispositivo en el que se encuentre.</p> 
+        <p class="text-left"> Con ésta técnica se consigue que el contenido del diseño de tu sitio se vea bien y pueda ser bastante legible para los usuarios sobre el dispositivo con el que éste interactúe, sea un celular, tablet, pc de escritorio o en un televisor.</p>
+ 
+        <div class="alert alert-info" id="viewport">
+          <h2>
+            &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt
+          </h2>
+        </div>
+        
+        <img src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fresponsive-website-design.jpg?1557012845566" class="img-fluid mx-auto d-block">
+        
+
+      </section>
+        
+      <!-- TEORÍA MEDIA QUERIES -->
+      <section id="media-queries">
+
+        <h1 class="display-4">Media Queries</h1>
+
+          <h2>¿Qué es?</h2>
+          <p> En español “consulta de medios” nos permite consultar e identificar el medio en el cuál se está mostrando nuestro sitio. 
+              Si la consulta resulta verdadera entonces se aplicarán determinados estilos CSS para este tipo de medio</p>
+          
+          <img class="img-fluid" src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fmediaqueriessintaxis.png?1557345160853" alt="sintaxis media queries">
+          
+          <div class="row d-flex justify-content-around">
+            <div class="col-3">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Media Type</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>all</td>
+                  </tr>
+                  <tr>
+                    <td>screen</td>
+                  </tr>
+                  <tr>
+                    <td>print</td>
+                  </tr>
+                  <tr>
+                    <td>tv</td>
+                  </tr>
+                  <tr>
+                    <td>speech</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="col-3">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Operadores lógicos</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>not</td>
+                  </tr>
+                  <tr>
+                    <td>and</td>
+                  </tr>
+                  <tr>
+                    <td>only</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div class="col-3">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Condionales</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>width (min/max)</td>
+                  </tr>
+                  <tr>
+                    <td>orientation (portrait /landscape)</td>
+                  </tr>
+                  <tr>
+                    <td>print</td>
+                  </tr>
+                  <tr>
+                    <td>tv</td>
+                  </tr>
+                  <tr>
+                    <td>speech</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+          </div>
+        
+
+      </section>
+      
+      <!-- TEORÍA BOOTSTRAP -->
+      <section id="teoria-b">
+
+          <h1 class="display-4 font-weight-bold">Bootstrap</h1>
+
+            <h2>¿Qué es?</h2>
+            <p>Bootstrap es una librería de clases de código abierto para facilitar el armado front-end de un sitio.</p>
+
+            <h2>¿Para qué sirve?</h2>
+            <p>Principalmente para ahorrar tiempo en el diseño del sitio, usando estructuras y clases pre-formateadas.</p>
+        
+            <h2>Ventajas de usar Bootstrap</h2>
+            <p>Cuenta con un mantenimiento y actualización realizados por Twitter: Esto no quiere decir que esta herramienta sea perfecta, pero gran parte del trabajo interno ya está llevado a cabo por sus creadores.</p>
+            <p>Ofrece un paquete de elementos web customizables: Con Bootstrap puedes diseñar una web jugando con sus elementos compuestos por diferentes combinaciones de HTML, CSS y Javascript, de manera que las piezas siempre encajan.</p>
+            <p>Utiliza componentes vitales para los desarrolladores: Como HTML5, CSS3, jQuery o GitHub, entre otros.</p>
+            <p>Sus plantillas son de sencilla adaptación responsive: Se desarrolló con la idea de facilitar el proceso de adaptación web a todo tipo de dispositivos.</p>
+            <p>Incluye Grid system: Muy útil para maquetar por columnas.</p>
+        
+            <p>AGREGAR COMO PISAR LAS CLASES CSS</p>
+      </section>
+        
+      <!-- INSTALACIÓN DE BOOTSTRAP -->
+      <section id="instalacion-b">
+
+        <h2 class="display-4">Instalación</h2>
+            <h3>Descarga CSS y JS</h3>
+                <div class="alert alert-info">
+                    <p>
+                        &lthead&gt<br>
+                        <span class="tab">&ltmeta charset="UTF-8"&gt</span><br>
+                            <span class="tab">&ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt</span><br>
+                            <span class="tab">&ltmeta http-equiv="X-UA-Compatible" content="ie=edge"&gt</span><br>
+                            <span class="tab">&lttitle&gtBootstrap&lt/title&gt</span><br>
+                            <span class="tab"><strong>&ltlink rel="stylesheet" href="css/bootstrap.css"&gt</strong></span><br>
+                            <span class="tab"><strong>&ltscript src="js/bootstrap.js"&gt&lt/script&gt</strong></span><br>
+                        &lt/head&gt
+                    </p>
+                </div>
+                <h3>BootstrapCDN</h3>
+                <div class="alert alert-info">
+                    <p class="text-break">
+                        &lthead&gt<br>
+                        <span class="tab">&ltmeta charset="UTF-8"&gt</span><br>
+                            <span class="tab">&ltmeta name="viewport" content="width=device-width, initial-scale=1.0"&gt</span><br>
+                            <span class="tab">&ltmeta http-equiv="X-UA-Compatible" content="ie=edge"&gt</span><br>
+                            <span class="tab">&lttitle&gtBootstrap&lt/title&gt</span><br>
+                            <span class="tab"><strong>&ltlink rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"&gt</strong></span><br>
+                            <span class="tab"><strong>&ltscript src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"&gt&lt/script&gt</strong></span><br>
+                        &lt/head&gt
+                    </p>
+                </div>
+        
+        </section>
+        
+      <!-- SISTEMA DE GRILLAS DE BOOTSTRAP -->
+      <section id="sistema-grilla-b">
+
+            <h2 class="display-4">Sistema de Grillas</h2>
+
+            <p>Bootstrap utiliza un sistema de grilla basado en dos tipos de contenedores y una grilla de 12 columnas que resulta muy flexible, y que como veremos podemos también alterar cuando nos resulte conveniente. </p>
+            <p>Básicamente, lo que hace Bootstrap es definir un modelo de divisor horizontal (una fila) divisible en 12 columnas. Pero con la ventaja de que podemos decir cuantas hay en cada resolución de pantalla. </p>
+
+            <article id="ejgrilla">
+            <!-- ejemplo de grilla -->
+                <!-- grilla span 1 -->
+              <div class="container">
+                      <div class="row">
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div> 
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                          <div class="col-1 bg-info text-center text-white small gridcustom" >span 1</div>
+                      </div>
+                </div>
+                <!-- texto/codigo grilla span 1 -->
+                <div class="alert alert-info collapse" id="grilla1">
+                    <p>&ltdiv class="row"&gt<br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-1 bg-info text-center text-white small gridcustom" &gtspan 1&lt/div&gt</span><br>
+                          &lt/div&gt</p>
+                </div>
+                <!-- boton collapse texto/codigo grilla span 1 -->
+                <p>
+                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#grilla1" aria-expanded="false" aria-controls="collapseExample">
+                    Ver código</button>
+                </p>
+
+                <!-- grilla span 2 -->
+                <div class="row">
+                          <div class="col-2 bg-info text-center text-white gridcustom" >span 2</div>
+                          <div class="col-2 bg-info text-center text-white gridcustom" >span 2</div>
+                          <div class="col-2 bg-info text-center text-white gridcustom" >span 2</div>
+                          <div class="col-2 bg-info text-center text-white gridcustom" >span 2</div>
+                          <div class="col-2 bg-info text-center text-white gridcustom" >span 2</div>
+                          <div class="col-2 bg-info text-center text-white gridcustom" >span 2</div>
+                      </div>
+                <!-- texto/codigo grilla span 2 -->
+                <div class="alert alert-info collapse" id="grilla2">
+                    <p>
+                          &ltdiv class="row"&gt<br>
+                              <span class="tab">&ltdiv class="col-2 bg-info text-center text-white gridcustom"&gtspan 2&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-2 bg-info text-center text-white gridcustom"&gtspan 2&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-2 bg-info text-center text-white gridcustom"&gtspan 2&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-2 bg-info text-center text-white gridcustom"&gtspan 2&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-2 bg-info text-center text-white gridcustom"&gtspan 2&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-2 bg-info text-center text-white gridcustom"&gtspan 2&lt/div&gt</span><br>
+                          &lt/div&gt<br>
+                          </p>
+                </div>
+                <!-- boton collapse texto/codigo grilla span 2 -->
+                <p>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#grilla2" aria-expanded="false" aria-controls="collapseExample">
+                  Ver código</button>
+                </p>
+
+                <!-- grilla span 4 -->
+                <div class="row">
+                          <div class="col-4 bg-info text-center text-white gridcustom" >span 4</div>
+                          <div class="col-4 bg-info text-center text-white gridcustom" >span 4</div>
+                          <div class="col-4 bg-info text-center text-white gridcustom" >span 4</div>
+                      </div>
+                <!-- texto/codigo grilla span 4 -->
+                <div class="alert alert-info collapse" id="grilla3">
+                          <p>
+                              &ltdiv class="row"&gt<br>
+                              <span class="tab">&ltdiv class="col-4 bg-info text-center text-white gridcustom"&gtspan 4&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-4 bg-info text-center text-white gridcustom"&gtspan 4&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-4 bg-info text-center text-white gridcustom"&gtspan 4&lt/div&gt</span><br>
+                              &lt/div&gt<br>
+                          </p>
+                      </div>
+                <!-- boton collapse texto/codigo grilla span 4 -->
+                <p>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#grilla3" aria-expanded="false" aria-controls="collapseExample">
+                  Ver código</button>
+                </p>
+
+                <!-- grilla span 6 -->
+                <div class="row">
+                          <div class="col-6 bg-info text-center text-white gridcustom">span 6</div>
+                          <div class="col-6 bg-info text-center text-white gridcustom">span 6</div>
+                      </div>
+                <!-- texto/codigo grilla span 6 -->
+                <div class="alert alert-info collapse" id="grilla4">
+                          <p>
+                              &ltdiv class="row"&gt<br>
+                              <span class="tab">&ltdiv class="col-6 bg-info text-center text-white gridcustom"&gtspan 6&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="col-6 bg-info text-center text-white gridcustom"&gtspan 6&lt/div&gt</span><br>
+                              &lt/div&gt<br>
+                          </p>
+                      </div>
+                <!-- boton collapse texto/codigo grilla span 6 -->
+                <p>
+                   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#grilla4" aria-expanded="false" aria-controls="collapseExample">
+                    Ver código</button>
+                </p>
+
+                <!-- grilla span 12 -->
+                <div class="row">
+                          <div class="col-12 bg-info text-center text-white gridcustom" >span 12</div>
+                      </div>
+                <!-- texto/codigo grilla span 12 -->
+                <div class="alert alert-info collapse" id="grilla5">
+                          <p>
+                              &ltdiv class="row"&gt<br>
+                              <span class="tab">&ltdiv class="col-12 bg-info text-center text-white gridcustom" &gtspan 12&lt/div&gt</span><br>
+                              &lt/div&gt
+                          </p>
+                      </div>
+                <!-- boton collapse texto/codigo grilla span 12 -->
+                <p>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#grilla5" aria-expanded="false" aria-controls="collapseExample">
+                  Ver código</button>
+                </p>
+            <!-- FIN ejemplo de grilla -->
+            </article>
+        
+         <!--BREAKPOINT-->
+            <h3>Puntos de quiebre</h3>
+            <h4>El sistema de grilla de Bootstrap 4 tiene cinco clases:</h4>
+            <ul class="list-group listbr">
+               <li class="list-group-item"><strong>.col-xl</strong> <span data-toggle="tooltip" data-placement="top" title="1200px"  >Cuanto mide?   </span> <a href="#" data-toggle="modal" data-target="#modalxl">Ejemplos</a></li>
+               <li class="list-group-item"><strong>.col-lg</strong> <span data-toggle="tooltip" data-placement="left" title="992px"  >Cuanto mide?   </span> <a href="#" data-toggle="modal" data-target="#modallg">Ejemplos</a></li>
+               <li class="list-group-item"><strong>.col-md</strong> <span data-toggle="tooltip" data-placement="right" title="768px" >Cuanto mide?   </span> <a href="#" data-toggle="modal" data-target="#modalmd">Ejemplos</a></li>
+               <li class="list-group-item"><strong>.col-sm</strong> <span data-toggle="tooltip" data-placement="bottom" title="576px">Cuanto mide?   </span> <a href="#" data-toggle="modal" data-target="#modalsm">Ejemplos</a></li>
+               <li class="list-group-item"  data-toggle="popover" data-placement="bottom" title="Extra small"  data-content="todos los dispositivos indistintamente de que tan pequeños sean " data-trigger="hover" id="poparadivertirse" ><strong>.col-</strong></li>
+            </ul>
+
+            <!-- MODALES PARA LOS BREAKPOINT-->
+            <article id="modalesbreak">  
+
+              <div class="modal fade" id="modalxl">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                  <div class="modal-content">
+                    Extra large, dispositivos muy grandes: pantalla igual <strong>o superior</strong> a 1200px de ancho (computadoras y laptops grandes)
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="modallg">
+                <div class="modal-dialog  modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    Large, dispositivos grandes: pantalla igual <strong>o superior</strong> a 992px de ancho (laptops generalmente)
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="modalmd">
+                <div class="modal-dialog  modal-dialog-centered modal-md">
+                  <div class="modal-content">
+                    Medium, dispositivos medianos: pantalla igual <strong>o superior</strong> a 768px de ancho (tablets)
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="modalsm">
+                <div class="modal-dialog  modal-dialog-centered modal-sm">
+                  <div class="modal-content">
+                    Small, dispositivos pequeños: pantalla igual <strong>o superior</strong> a 576px de ancho (telefonos horizontalmente)
+                  </div>
+                </div>
+              </div>
+
+            </article>
+
+            <!-- PRÁCTICA DE GRILLAS DE BOOTSTRAP -->
+
+            <h2>Grillas según el tamaño de la pantalla</h2>
+
+            <article id="practicagrilla">
+                <!-- EJEMPLO 1 (CELESTE) -->
+                <!-- botones ej1 -->
+                <p>
+                   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#row1" aria-expanded="false" aria-controls="collapseExample">
+                   Ver código</button>
+                   <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#container1" aria-expanded="false" aria-controls="collapseExample">
+                   Ocultar ejemplo</button>
+                 </p>
+                <!-- .col ej1 -->
+                <div class="container collapse show" id="container1">
+                          <div class="row">
+                              <div class="col bg-primary text-center text-white gridcustom">
+                                  1
+                              </div>
+                              <div class="col bg-primary text-center text-white gridcustom">
+                                  2
+                              </div>
+                              <div class="col bg-primary text-center text-white gridcustom">
+                                  3
+                              </div>
+                              <div class="col bg-primary text-center text-white gridcustom">
+                                  4
+                              </div>
+                              <div class="col bg-primary text-center text-white gridcustom">
+                                  5
+                              </div>
+                          </div>
+                      </div>
+                <!-- texto collapse ej1 -->
+                <div class="alert alert-primary collapse" id="row1">
+                    <p>
+                              &ltdiv class="row"&gt<br>
+                              <span class="tab">&ltdiv class="<strong>col</strong> bg-primary text-center text-white gridcustom"&gt</span><br>
+                                  <span class="tabtab">1</span><br>
+                              <span class="tab">&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="<strong>col</strong> bg-primary text-center text-white gridcustom"&gt</span><br>
+                                  <span class="tabtab">2</span><br>
+                              <span class="tab">&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="<strong>col</strong> bg-primary text-center text-white gridcustom"&gt</span><br>
+                                  <span class="tabtab">3</span><br>
+                              <span class="tab">&lt/div&gt</span><br>
+                              <span class="tab">&ltdiv class="<strong>col</strong> bg-primary text-center text-white gridcustom"&gt</span><br>
+                                  <span class="tabtab">4</span><br>
+                              <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col</strong> bg-primary text-center text-white gridcustom"&gt</span><br>
+                                  <span class="tabtab">5</span><br>
+                              <span class="tab">&lt/div&gt</span><br>
+                          &lt/div&gt
+                          </p>
+                </div>
+
+                <!-- EJEMPLO 2 (GRIS) -->
+                <!-- botones ej2 -->
+                <p>
+                  <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#row2" aria-expanded="false" aria-controls="collapseExample">
+                  Ver código</button>
+                  <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#container2" aria-expanded="false" aria-controls="collapseExample">
+                  Ocultar ejemplo</button>
+                </p>
+                <!-- .col-sm ej2 -->
+                <div class="container collapse show" id="container2">
+                          <div class="row">
+                              <div class="col-xl bg-secondary text-center text-white gridcustom">
+                                  1
+                              </div>
+                              <div class="col-xl bg-secondary text-center text-white gridcustom">
+                                  2
+                              </div>
+                              <div class="col-xl bg-secondary text-center text-white gridcustom">
+                                  3
+                              </div>
+                              <div class="col-xl bg-secondary text-center text-white gridcustom">
+                                  4
+                              </div>
+                              <div class="col-xl bg-secondary text-center text-white gridcustom">
+                                  5
+                              </div>
+                          </div>
+                 </div>
+                <!-- texto collapse ej2 -->
+                <div class="alert alert-secondary collapse" id="row2">
+                          <p>
+                              &ltdiv class="row"&gt<br>
+                              <span class="tab">&ltdiv class="<strong>col-xl</strong> bg-secondary text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">1</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-xl</strong> bg-secondary text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">2</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-xl</strong> bg-secondary text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">3</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-xl</strong> bg-secondary text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">4</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-xl</strong> bg-secondary text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">5</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                              &lt/div&gt
+                          </p>
+                      </div>
+
+                <!-- EJEMPLO 3 (VERDE) -->
+                <!-- botones ej3 -->
+                <p>
+                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#row3" aria-expanded="false" aria-controls="collapseExample">
+                          Ver código
+                        </button>
+                        <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#container3" aria-expanded="false" aria-controls="collapseExample">
+                          Ocultar ejemplo
+                        </button>
+                      </p>
+                <!-- .col-md ej3 -->
+                <div class="container collapse show" id="container3">
+                          <div class="row">
+                              <div class="col-lg bg-success text-center text-white gridcustom" >
+                                  1
+                              </div>
+                              <div class="col-lg bg-success text-center text-white gridcustom" >
+                                  2
+                              </div>
+                              <div class="col-lg bg-success text-center text-white gridcustom" >
+                                  3
+                              </div>
+                              <div class="col-lg bg-success text-center text-white gridcustom" >
+                                  4
+                              </div>
+                              <div class="col-lg bg-success text-center text-white gridcustom" >
+                                  5
+                              </div>
+                          </div>
+                  </div>
+                <!-- texto collapse ej3 -->
+                <div class="alert alert-success collapse" id="row3">
+                          <p>
+                              &ltdiv class="row"&gt<br>
+                                  <span class="tab">&ltdiv class="<strong>col-lg</strong> bg-success text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">1</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-lg</strong> bg-success text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">2</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-lg</strong> bg-success text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">3</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-lg</strong> bg-success text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">4</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-lg</strong> bg-success text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">5</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                              &lt/div&gt
+                          </p>
+                      </div>
+
+                <!-- EJEMPLO 4 (ROJO) -->
+                <!-- botones ej4 -->
+                <p>
+                  <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#row4" aria-expanded="false" aria-controls="collapseExample">
+                  Ver código</button>
+                  <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#container4" aria-expanded="false" aria-controls="collapseExample">
+                  Ocultar ejemplo</button>
+                </p>
+                <!-- .col-sm-2 y .col-sm-3 ej4 --> 
+                <div class="container collapse show" id="container4">
+                          <div class="row">
+                              <div class="col-sm-2 bg-danger text-center text-white gridcustom">
+                                  1
+                              </div>
+                              <div class="col-sm-2 bg-danger text-center text-white gridcustom">
+                                  2
+                              </div>
+                              <div class="col-sm-2 bg-danger text-center text-white gridcustom">
+                                  3
+                              </div>
+                              <div class="col-sm-3 bg-danger text-center text-white gridcustom">
+                                  4
+                              </div>
+                              <div class="col-sm-3 bg-danger text-center text-white gridcustom">
+                                  5
+                              </div>
+                          </div>
+                 </div>
+                <!-- texto collapse ej4 -->
+                <div class="alert alert-danger collapse" id="row4">
+                          <p>
+                              &ltdiv class="row"&gt<br>
+                              <span class="tab">&ltdiv class="<strong>col-sm-2</strong> bg-danger text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">1</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                      <span class="tab">&ltdiv class="<strong>col-sm-2</strong> bg-danger text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">2</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                      <span class="tab">&ltdiv class="<strong>col-sm-2</strong> bg-danger text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">3</span><br>
+                                 <span class="tab"> &lt/div&gt</span><br>
+                                      <span class="tab"> &ltdiv class="<strong>col-sm-3</strong> bg-danger text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">4</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                     <span class="tab">&ltdiv class="<strong>col-sm-3</strong> bg-danger text-center text-white gridcustom"&gt</span><br>
+                                      <span class="tabtab">5</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                              &lt/div&gt
+                          </p>
+                 </div>
+
+                <!-- EJEMPLO 5 (AMARILLO) -->
+                <!-- botones ej5 -->
+                <p>
+                   <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#row5" aria-expanded="false" aria-controls="collapseExample">
+                   Ver código</button>
+                   <button class="btn btn-warning" type="button" data-toggle="collapse" data-target="#container5" aria-expanded="false" aria-controls="collapseExample">
+                   Ocultar ejemplo</button>
+                </p>
+                <!-- diferentes .col ej5 -->
+                <div class="container collapse show" id="container5">
+                          <div class="row">
+                              <div class="col-6 col-md-1 col-lg bg-warning text-center text-white gridcustom" >
+                                  1
+                              </div>
+                              <div class="col-3 col-md-1 col-lg bg-warning text-center text-white gridcustom" >
+                                  2
+                              </div>
+                              <div class="col-1 col-md-1 col-lg-3 bg-warning text-center text-white gridcustom" >
+                                  3
+                              </div>
+                              <div class="col-1 col-md-3 col-lg-3 bg-warning text-center text-white gridcustom" >
+                                  4
+                              </div>
+                              <div class="col-1 col-md-6 col-lg-3 bg-warning text-center text-white gridcustom" >
+                                  5
+                              </div>
+                          </div>
+                </div>
+                <!-- texto collapse ej5 -->
+                <div class="alert alert-warning collapse" id="row5">
+                          <p>
+                              &ltdiv class="row"&gt<br>
+                                  <span class="tab">&ltdiv class="<strong>col-6 col-md-1 col-lg</strong> bg-warning text-center text-white gridcustom" &gt</span><br>
+                                      <span class="tabtab">1</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-3 col-md-1 col-lg</strong> bg-warning text-center text-white gridcustom" &gt</span><br>
+                                      <span class="tabtab">2</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-1 col-md-1 col-lg-3</strong> bg-warning text-center text-white gridcustom" &gt</span><br>
+                                      <span class="tabtab">3</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-1 col-md-3 col-lg-3</strong> bg-warning text-center text-white gridcustom" &gt</span><br>
+                                      <span class="tabtab">4</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                                  <span class="tab">&ltdiv class="<strong>col-1 col-md-6 col-lg-3</strong> bg-warning text-center text-white gridcustom" &gt</span><br>
+                                      <span class="tabtab">5</span><br>
+                                  <span class="tab">&lt/div&gt</span><br>
+                              &lt/div&gt
+                          </p>
+                </div>
+
+                <!-- EJEMPLO 6 (CELESTE CLARO) -->
+                <!-- botones ej6 -->
+                <p>
+                   <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#row6" aria-expanded="false" aria-controls="collapseExample">
+                   Ver código</button>
+                   <button class="btn btn-info" type="button" data-toggle="collapse" data-target="#container6" aria-expanded="false" aria-controls="collapseExample">
+                   Ocultar ejemplo</button>
+                </p>
+                <!-- .col-auto y solo .col ej6 -->
+                <div class="container collapse show" id="container6">
+
+                          <div class="row">
+                              <div class="col-auto bg-info text-center text-white gridcustom" >
+                                  col-auto
+                              </div>
+                              <div class="col-auto bg-info text-center text-white gridcustom" >
+                                  otro col-auto
+                              </div>
+                              <div class="col bg-info text-center text-white gridcustom" >
+                                  col a secas
+                              </div>
+                          </div>
+                 </div>
+                <!-- texto collapse ej6 -->
+                <div class="alert alert-info collapse" id="row6">
+                              <p>
+                                 &ltdiv class="row"&gt<br>
+                                      <span class="tab">&ltdiv class="<strong>col-auto</strong> bg-info text-center text-white gridcustom"&gt</span><br>
+                                          <span class="tabtab">1 de 3</span><br>
+                                      <span class="tab">&lt/div&gt</span><br>
+                                      <span class="tab">&ltdiv class="<strong>col-auto</strong> bg-info text-center text-white gridcustom"&gt</span><br>
+                                          <span class="tabtab">Contenido con ancho variable</span><br>
+                                      <span class="tab">&lt/div&gt</span><br>
+                                      <span class="tab">&ltdiv class="<strong>col</strong> bg-info text-center text-white gridcustom"&gt</span><br>
+                                          <span class="tabtab">3 de 3</span><br>
+                                      <span class="tab">&lt/div&gt</span><br>
+                                  &lt/div&gt 
+                              </p>
+                </div>
+  
+                <!-- EJEMPLO 7 (GRIS OSCURO) -->
+                <!-- botones ej7 -->
+              <!-- abortado, es un quilombo sin mucho sentido
+                <p>
+                   <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#row7" aria-expanded="false" aria-controls="collapseExample">
+                   Ver código</button>
+                   <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#container7" aria-expanded="false" aria-controls="collapseExample">
+                   Ocultar ejemplo</button>
+                </p> -->
+                <!-- .col-lg-2 y .col-md-auto ej7 -->
+              <!--
+                <div class="container collapse show" id="container7">
+                          <div class="row justify-content-md-center">
+                              <div class="col col-lg-2 bg-dark text-center text-white gridcustom" >
+                                  1 de 3
+                              </div>
+                              <div class="col-md-auto bg-dark text-center text-white gridcustom" >
+                                  Contenido ancho variable
+                              </div>
+                              <div class="col col-lg-2 bg-dark text-center text-white gridcustom" >
+                                  3 de 3
+                              </div>
+                          </div>
+                </div>
+                <!-- texto collapse ej7 -->
+              <!--
+                <div class="alert alert-dark collapse" id="row7">
+                              <p>
+                                  &ltdiv class="row justify-content-md-center"&gt<br>
+                                      <span class="tab">&ltdiv class="<strong>col col-lg-2</strong> bg-dark text-center text-white gridcustom" &gt</span><br>
+                                          <span class="tabtab">1 de 3</span><br>
+                                      <span class="tab">&lt/div&gt</span><br>
+                                      <span class="tab">&ltdiv class="<strong>col-md-auto</strong> bg-dark text-center text-white gridcustom" &gt</span><br>
+                                          <span class="tabtab">Contenido ancho variable</span><br>
+                                      <span class="tab">&lt/div&gt</span><br>
+                                      <span class="tab">&ltdiv class="<strong>col col-lg-2</strong> bg-dark text-center text-white gridcustom" &gt</span><br>
+                                          <span class="tabtab">3 de 3</span><br>
+                                      <span class="tab">&lt/div&gt</span><br>
+                                  &lt/div&gt
+                              </p>
+                </div> -->
+
+            </article>
+
+           
+        
+        <!-- Ejemplo de Grilla -->
+        
+        <div class="container">
+
+	<h1>Ejemplo de Grilla</h1>
+	<br>
+	<div class="row">
+		<div class="col">
+			<h3>CABECERA</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita voluptas, nulla sequi suscipit maxime asperiores consequatur ullam cupiditate laudantium esse error quo praesentium eaque mollitia nam quis perferendis velit consequuntur. 
+				
+			</p>
+		</div>
+	</div>
+<!--
+			<h2>Repaso de las medidas</h2>
+			<h5>col: hasta 575px</h5>
+			<h5>sm: 576px - 767px</h5>
+			<h5>md: 768px - 991px</h5>
+			<h5>lg: 992px - 1199px</h5>
+			<h5>xl: 1200px en adelante </h5>
+          -->
+      <div class="row" style="font-size: 24px; text-align: center; margin-top: 30px;">
+          <div class="col-lg"><strong>col:</strong> hasta 575px</div> 
+          <div class="col-lg"><strong>sm:</strong> 576px - 767px</div>  
+          <div class="col-lg"><strong>md:</strong> 768px - 991px</div>  
+          <div class="col-lg"><strong>lg:</strong> 992px - 1199px</div>
+          <div class="col-lg"><strong>xl:</strong> +1200px</div>
+      </div>
+          
+	<div class="row" style="margin-top: 30px;">
+		<div class="col borde1" ><p>Uno</p></div>
+		<div class="col borde2" ><p>Dos</p></div>
+		<div class="col borde3" ><p>Tres</p></div>
+	</div>
+
+
+<br>
+<!-- Descomentar en clase -->
+          <!--
+ 	<div class="row">
+		<div class="col-12 col-sm-12 col-md-6 col-lg-2 col-xl-2 d-none d-md-block borde1"> <p>Uno</p> </div>
+		<div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 borde2"> <p>Dos</p>  </div>
+		<div class="col-12 col-sm-12 col-md-12 col-lg-2 col-xl-2 d-none d-md-block borde3"> <p>Tres</p> </div>
+	</div> 
+-->
+
+	<br>
+
+	<div class="row">
+		<div class="col">
+			<h3>PIE DE PAGINA</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita voluptas, nulla sequi suscipit maxime asperiores consequatur ullam cupiditate laudantium esse error quo praesentium eaque mollitia nam quis perferendis velit consequuntur.</p>
+		</div>
+	</div>
+
+
+
+</div>
+        <!-- Fin del ejemplo de Grilla -->
+
+      </section>
+      
+      <!-- COMPONENTES DE BOOTSTRAP -->
+      <section id="componentes-b">
+        
+        <h2 class="display-4 font-weight-bold">Componentes de Bootstrap</h2>
+        
+        <!-- CAROUSEL -->
+        <article id="comp-carousel">
+          <h3 class="display-4">Carousel (CSS + JS)</h3>
+            
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"  data-interval="3000">
+              <ol class="carousel-indicators">
+                <li data-target="#carouselExampleControls" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleControls" data-slide-to="1"></li>
+                <li data-target="#carouselExampleControls" data-slide-to="2"></li>
+              </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fsimpsons1.jpg?1557067432687" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fsimpsons3.jpg?1557067434671" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fsimpsons2.jpg?1557067437591" class="d-block w-100">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </article>
+        
+        <!-- COLLAPSE/VENTAJAS DE BOOTSTRAP -->
+        <article id="comp-collapse">
+          
+            <h3 class="display-4">Collapse</h3>
+            <h3 class="ventajas">Ventajas de usar Bootstrap</h3>
+            
+            <!-- panel de ventajas  -->
+            <div class="panel-group" id="accordion" role="tablist">
+              <!-- ventaja1 -->
+              <div class="panel panel-default">
+                  
+                  <div class="panel-heading" role="tab" id="heading1">
+                        <h4 class="panel-title">
+                            <a href="#collapse1" data-toggle="collapse" data-parent="#accordion">
+                            -Ventaja #1</a>
+                        </h4>
+                  </div>
+
+                  <div id="collapse1" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                            Cuenta con un mantenimiento y actualización realizados por 
+                            Twitter: Esto no quiere decir que esta herramienta sea perfecta, pero 
+                            gran parte del trabajo interno ya está llevado a cabo por sus creadores.
+                      </div>
+                  </div>
+
+              </div>
+              <!-- ventaja2 -->
+              <div class="panel panel-default">
+                
+                  <div class="panel-heading" role="tab" id="heading2">
+                        <h4 class="panel-title">
+                            <a href="#collapse2" data-toggle="collapse" data-parent="#accordion">
+                            -Ventaja #2</a>
+                        </h4>
+                  </div>
+                
+                  <div id="collapse2" class="panel-collapse collapse">
+                      <div class="panel-body">
+                              Ofrece un paquete de elementos web customizables: Con Bootstrap puedes diseñar una web jugando con sus elementos 
+                              compuestos por diferentes combinaciones de HTML, CSS y Javascript, de manera que las piezas siempre encajan.
+                      </div>
+                  </div>
+                  
+              </div>
+              <!-- ventaja3 -->
+              <div class="panel panel-default">
+                
+                        <div class="panel-heading" role="tab" id="heading3">
+                              <h4 class="panel-title">
+                                  <a href="#collapse3" data-toggle="collapse" data-parent="#accordion">
+                                  -Ventaja #3</a>
+                              </h4>
+                        </div>
+                
+                        <div id="collapse3" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                    Utiliza componentes vitales para los desarrolladores: Como HTML5, CSS3, jQuery o GitHub, entre otros.
+                            </div>
+                        </div>
+                        
+              </div>
+              <!-- ventaja4 -->
+              <div class="panel panel-default">
+                
+                      <div class="panel-heading" role="tab" id="heading4">
+                              <h4 class="panel-title">
+                                  <a href="#collapse4" data-toggle="collapse" data-parent="#accordion">
+                                  -Ventaja #4</a>
+                              </h4>
+                                    
+                       </div>
+                
+                       <div id="collapse4" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                Sus plantillas son de sencilla adaptación responsive: Se desarrolló con la idea de facilitar el 
+                                proceso de adaptación web a todo tipo de dispositivos.
+                            </div>
+                       </div>
+                              
+              </div>
+              <!-- ventaja5 -->
+              <div class="panel panel-default">
+                
+                  <div class="panel-heading" role="tab" id="heading5">
+                        <h4 class="panel-title">
+                            <a href="#collapse5" data-toggle="collapse" data-parent="#accordion">
+                            -Ventaja #5</a>
+                        </h4>
+                  </div>
+                
+                  <div id="collapse5" class="panel-collapse collapse in">
+                      <div class="panel-body">
+                          Incluye Grid system: Muy útil para maquetar por columnas.
+                      </div>
+                  </div>
+              
+              </div>
+            </div> 
+
+        </article> 
+        
+        <!-- TABLAS -->
+        <article id="comp-tablas">
+          
+        	  <h3 class="display-4">Tablas</h3>
+            <h4>Para el manejo de tablas, bootstrap maneja diversas clases, que permiten mejorar la funcionalidad y estética de las tablas. Algunos ejemplos de dichas clases son:</h4>
+
+            <ul>
+              <li> table table-striped : Permite alternar colores de fondo en las filas</li>
+              <li> table table-bordered: Permite establecer bordes horizontales y verticales</li>
+              <li> table table-hover: Al pasar el mouse por las filas cambia el aspecto de la fila actual</li>
+              <li> table table-dark table-striped: Anidamiento de dos clases, le da una tonalidad oscura y alternada a las filas</li>
+              <li> table table-dark table-hover: Establece tonalidad oscuras alternadas en las filas, cuando se hace foco con el mouse</li>
+              <li> table table-primary: Establece una estética para las filas </li>
+              <li> table table-responsive-sm: Permite que la tabla se vuelva responsiva cuando la pantalla es sm(small) </li>
+            </ul>
+
+            <h3>Ejemplo de <em>&lttable class="table table-striped&gt"</em></h3>
+          
+            <!-- 			<table style="border:1px solid gray;"> -->
+				            <table class="table table-striped">	
+              <!-- 			<table class="table table-bordered">	-->  				
+              <!-- 			<table class="table table-hover">	 -->					
+              <!-- 			<table class="table table-dark table-striped"> -->
+              <!-- 			<table class="table table-dark table-hover">  -->
+              <!-- 			<table class="table table-primary"> -->
+              <!-- 			<table class="table table-responsive-sm"> -->
+              <tr class="table-secondary">
+                <td>LUNES</td>
+                <td>MARTES</td>
+                <td>MIERCOLES</td>
+                <td>JUEVES</td>
+                <td>VIERNES</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+              </tr>
+            </table>
+
+      </article>
+                      
+        <!-- ALERTAS -->
+        <article id="comp-alert">
+			      
+            <h3 class="display-4">Alertas</h3>
+            <h4>Se utilizan alertas para resaltar distintas etiquetas. Ejemplos:</h4>
+            
+            <!-- ej1 parrafo común con lass small -->
+            <h5>Párrafo común (sin alertas):</h5>
+            <!-- ej1 p -->
+            <p class="small">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet nihil, cupiditate accusantium aut nobis dolorum reprehenderit facilis optio, id expedita soluta eius totam corporis non rerum quibusdam illum rem nisi!
+            </p>
+            
+            <!-- ej2 parrafo con alertas -->
+				    <h5>Párrafo con uso de alertas, resaltado con color primario y justificado: class="alert alert-primary text-justify". Al final agregamos una etiqueta a (link) con alerta:</h5>
+            <!-- ej2 p class alert-primary -->
+            <p class="alert alert-primary text-justify small">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro modi eos eius neque eum obcaecati in ullam quod iusto, sit officia, hic sequi tempora asperiores quis? Accusantium consectetur autem aperiam. <a href="#alerta1" class="alert-link">Esto es un link con uso de alerta</a>
+            </p>
+            <!-- ej2 codigo collapse -->
+            <div class="alert alert-info collapse" id="alerta1">
+              <p>
+                 &ltp class="<strong>alert alert-primary text-justify</strong>"&gt<br>
+                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro modi eos eius neque eum obcaecati in ullam quod iusto, sit officia, hic sequi tempora asperiores quis? Accusantium consectetur autem aperiam. &lta href="" class="alert-link"&gtEsto es un link con uso de alerta&lt/a&gt<br>
+                 &lt/p&gt
+              </p>
+            </div>
+            <!-- ej2 boton collapse -->
+            <p>
+               <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#alerta1" aria-expanded="false" aria-controls="collapseExample">
+               Ver código</button>
+            </p>
+            
+            <!-- ej3 parrafo con alertas y cierre -->
+				    <h5>Párrafo y botón de cierre con alerta. El botón de cierre permite sacar el párrafo.</h5>		
+            <!-- ej3 p -->
+            <p class="alert alert-success alert-dismissable small">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Felicidades</strong>, la operación concluyó satisfactoriamente.
+            </p>
+            <!-- ej3 código collapse -->
+            <div class="alert alert-info collapse" id="alerta2">
+                <p>
+                   &ltp class="<strong>alert alert-success alert-dismissable</strong>"&gt<br>
+                   <span class="tab">&ltbutton type="button" class="close" data-dismiss="alert"&gt&times;<span class="tab">&lt/button&gt</span><br>
+                   <span class="tab">&ltstrong&gtFelicidades&lt/strong&gt, la operación concluyó satisfactoriamente.</span><br>
+                   &lt/p&gt</span><br>
+                </p>
+            </div>
+            <!-- ej3 boton p collapse -->
+            <p>
+               <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#alerta2" aria-expanded="false" aria-controls="collapseExample">
+               Ver código</button>
+            </p>
+
+          </article>
+        
+        <!-- BOTONES -->
+        <article id="comp-boton">
+        	  <h2 class="display-4">Botones</h2>	
+            <h3>La clase principal en Bootstrap para crear botones de <strong>btn</strong> y sus diferentes variantes.</h3>
+
+			      <h4>Botones:</h4>
+          
+            <!-- botones ej1 -->
+            <button type="button" class="btn btn-primary">ENVIAR</button>
+            <button type="button" class="btn btn-secondary">ENVIAR</button>
+            <button type="button" class="btn btn-success">ENVIAR</button>
+            <button type="button" class="btn btn-danger">ENVIAR</button>
+            <button type="button" class="btn btn-warning">ENVIAR</button>
+            <button type="button" class="btn btn-info">ENVIAR</button>
+            <button type="button" class="btn btn-light">ENVIAR</button>
+            <button type="button" class="btn btn-dark">ENVIAR</button>
+            <!-- codigo collapse de botones -->
+            <div class="alert alert-info collapse" id="botones">
+                <p>
+                    &ltbutton type="button" class="<strong>btn btn-primary</strong>"&gtENVIAR&lt/button&gt<br>
+                    &ltbutton type="button" class="<strong>btn btn-secondary</strong>"&gtENVIAR&lt/button&gt<br>
+                    &ltbutton type="button" class="<strong>btn btn-success</strong>"&gtENVIAR&lt/button&gt<br>
+                    &ltbutton type="button" class="<strong>btn btn-danger</strong>"&gtENVIAR&lt/button&gt<br>
+                    &ltbutton type="button" class="<strong>btn btn-warning</strong>"&gtENVIAR&lt/button&gt<br>
+                    &ltbutton type="button" class="<strong>btn btn-info</strong>"&gtENVIAR&lt/button&gt<br>
+                    &ltbutton type="button" class="<strong>btn btn-light</strong>"&gtENVIAR&lt/button&gt<br>
+                    &ltbutton type="button" class="<strong>btn btn-dark</strong>"&gtENVIAR&lt/button&gt
+                </p>
+            </div>
+            <!-- boton collapse -->
+            <p>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#botones" aria-expanded="false" aria-controls="collapseExample">
+                    Ver código
+                </button>
+            </p>
+          
+			      <h4>Boton con efecto visual al paso del mouse:</h4>
+ 			      <button type="button" class="btn btn-outline-success btn-lg">ENVIAR</button>
+            
+            <h4>Botón <strong>en bloque</strong> con efecto visual al paso del mouse:</h4>
+			      <button type="button" class="btn btn-outline-success btn-block">ENVIAR</button>
+
+			      <h4>Botón <strong>Desactivado</strong>:</h4>
+            <button type="button" class="btn btn-success btn-block disabled">ENVIAR</button>
+ 
+            <h4>Grupo de Botones</h4>
+            <div class="btn-group-vertical">
+              <button type="button" class="btn btn-info">Apple</button>
+              <button type="button" class="btn btn-info">Samsung</button>
+              <button type="button" class="btn btn-info">Sony</button>
+            </div>
+
+			      <h4>Grupo de Botones con Submenúes</h4>	
+            <div class="btn-group"> 
+              <button type="button" class="btn btn-success">Apple</button>
+              <button type="button" class="btn btn-success">Samsung</button>
+              <div class="btn-group">
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"> Sony</button>
+                <div class="dropdown-menu">
+                  <a href="#" class="dropdown-item">Tablet</a>
+                  <a href="#" class="dropdown-item">Smartphone</a>
+                  <a href="#" class="dropdown-item">Computadora</a>
+                </div>
+              </div>
+            </div>
+
+            <h4>Botón tipo Píldora</h4>	
+            <p><span class="badge badge-pill badge-primary"> insignia </span></p>
+
+            <h4>Botón con Distintivo</h4>	
+            <button type="button" class="btn btn-primary">Mensaje  <span class="badge badge-light">4</span></button>
+
+			      <h4>Barra de progreso</h4>
+            <div class="progress d" style="height: 50px; ">
+              <div class="progress-bar w-75 h-75 bg-warning progress-bar-striped progress-bar-animated" >50%</div> <!-- striped son las rayitas, animated se mueve -->
+              <div class="progress-bar w-50 h-75 bg-primary progress-bar-striped progress-bar-animated" >30%</div>
+              <div class="progress-bar w-25 h-75 bg-secondary progress-bar-striped progress-bar-animated" >20%</div>
+            </div>
+
+      </article>
+
+			  <!-- PAGINACION -->
+        <article id="comp-pagination">
+            <h3 class="display-4">Paginación</h3>	
+            
+            <h4>Boostrap provee diferentes clases para manejar la paginacíón en un sitio. Veamos tres ejemplos muy comunes:</h4>
+
+            <div>
+              <ul class="pagination pagination-xl">  
+                <li class="page-item"><a class="page-link" href="#"> < Previo</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item active"><a class="page-link" href="#">3</a></li>
+                <li class="page-item disabled"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item"><a class="page-link" href="#"> Siguiente > </a></li>
+              </ul>
+            </div>
+
+            <h4>Breadcrumb</h4>
+            <div>
+              <ul class="breadcrumb">  
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Foto</a></li>
+                <li class="breadcrumb-item"><a href="#">Verano 2018</a></li>
+                <li class="breadcrumb-item"><a href="#">Europa</a></li>
+                <li class="breadcrumb-item"><a href="#">Roma</a></li>
+              </ul>
+            </div>
+
+            <h4>List-group</h4>
+            <div class="list-group">
+              <a href="#" class="list-group-item list-group-item-action">Primero</a>
+              <a href="#" class="list-group-item list-group-item-primary">Segundo</a>
+              <a href="#" class="list-group-item list-group-item-danger">Tercero</a>		
+            </div>
+          
+      </article>
+        
+			  <!-- MENUS DESPLEGABLES Y COLLAPSABLES -->
+        <article id="comp-menu">
+            <h3 class="display-4">Menúes</h3>
+      
+            <!-- Ejemplo de Menúes Desplegables -->
+            <h4>Ejemplos de menúes desplegables (clase dropdown)</h4>		
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown button
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Fnord</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+              <button type="button" class="btn btn-primary dropdown-toggle btn-success" data-toggle="dropdown">Desplegable</button>
+
+              <div class="dropdown-menu">
+                <div class="dropsown-header">Grupo Uno</div>
+                <a href="#" class="dropdown-item">Link 1</a>	
+                <a href="#" class="dropdown-item">Link 2</a>	
+                <a href="#" class="dropdown-item">Link 3</a>	
+                <div class="dropdown-divider"></div>
+                <div class="dropsown-header">Grupo Dos</div>
+                <a href="#" class="dropdown-item">Link 1</a>	
+                <a href="#" class="dropdown-item">Link 2</a>	
+                <a href="#" class="dropdown-item">Link 3</a>	
+              </div>
+
+            </div>
+
+            <!-- Ejemplo de Menúes Collapsables -->
+            <h3>Ejemplo de menú colapsable (clase collapse)</h3>			
+
+            <button data-toggle="collapse" data-target="#uno" class="btn-primary">Primero</button>
+
+            <div id="uno" class="collapse">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta officiis quidem dolorem animi eligendi, mollitia numquam iusto sequi incidunt, aut distinctio optio consequuntur fugiat, architecto vel eos nisi! Impedit, ab.</div>
+
+            <button data-toggle="collapse" data-target="#dos">Segundo</button>
+
+            <div id="dos" class="collapse">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta officiis quidem dolorem animi eligendi, mollitia numquam iusto sequi incidunt, aut distinctio optio consequuntur fugiat, architecto vel eos nisi! Impedit, ab.</div>
+
+            <button data-toggle="collapse" data-target="#tres">Tercero</button>
+
+            <div id="tres" class="collapse">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta officiis quidem dolorem animi eligendi, mollitia numquam iusto sequi incidunt, aut distinctio optio consequuntur fugiat, architecto vel eos nisi! Impedit, ab.</div>
+          
+            <button data-toggle="collapse" data-target="#cuatro">Cuarto</button>
+
+              <div id="cuatro" class="collapse">
+                  <img src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fpocho4.jpg?1557189558517">
+              </div>
+
+              <div class="alert alert-info collapse" id="pocho">
+                  <h3>Código del DIV colapsable</h3>
+                  <p>
+                      &ltdiv id="<strong>cuatro</strong>" class="<strong>collapse</strong>"&gt<br>
+                      <span class="tab">&ltimg src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Fpocho4.jpg?1557189558517"&gt</span><br>
+                      &lt/div&gt<br>
+                  </p>
+
+                  <h3>Código del BUTTON que activa la función</h3>
+                  <p>
+                      &ltbutton class="btn btn-primary" type="button" data-toggle="<strong>collapse</strong>" data-target="<strong>#cuatro</strong>" aria-expanded="false" aria-controls="collapseExample"&gt<br>
+                      <span class="tab">Ver código</span><br>
+                  &lt/button&gt  
+                  </p>
+              </div>
+              <p>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pocho" aria-expanded="false" aria-controls="collapseExample">
+                      Ver código
+                  </button>
+              </p>
+
+        </article>
+        
+        <!-- FORMULARIOS -->  
+        <article id="comp-form"> 
+          
+          <h1 class="display-4">Formularios</h1>
+          
+          <form> <!-- class="form-inline" -->
+
+            <h5>Elementos Input</h5>
+            <label for="nombre">Nombre: </label> <input type="text" id="nombre" class="form-control">
+            <label for="email">Email: </label> <input type="email" id="email" class="form-control">
+            <label for="tiempo">Fecha: </label> <input type="datetime" id="tiempo" class="form-control">
+            <label for="color">Color: </label> <input type="color" id="color" class="form-control">
+            <label for="contrasena">Contraseña: </label> <input type="password" id="contrasena" class="form-control">
+
+            <h5>Text Area</h5>				
+            <textarea name="descripcion"  id="unos" cols="30" rows="10"></textarea>
+
+            <h5>Checkbox</h5>				
+            <div class="form-check">
+              <label for="dos" class="form-check-label">
+                <input type="checkbox" class="form-check-input" value=""> Opción 1
+              </label>
+            </div>
+
+            <div class="form-check">
+              <label for="dos" class="form-check-label">
+                <input type="checkbox" class="form-check-input" value=""> Opción 2
+              </label>
+            </div>
+
+            <div class="form-check">
+              <label for="dos" class="form-check-label">
+                <input type="checkbox" class="form-check-input" value=""> Opción 3
+              </label>
+            </div>
+
+            <h5>Radio Groups</h5>				
+            <label for="" class="radio-inline"> <input type="radio" name="gusto"> Televisión </label>
+            <label for="" class="radio-inline"> <input type="radio" name="gusto"> Radio </label>
+            <label for="" class="radio-inline"> <input type="radio" name="gusto"> Internet </label>
+
+
+            <h5>Select</h5>				
+            <select name="dias" id="">
+              <option value="lunes">Lunes</option>	
+              <option value="martes">Martes</option>	
+              <option value="miercoles">Miercoles</option>	
+              <option value="jueves">Jueves</option>	
+              <option value="viernes">Viernes</option>	
+            </select>
+
+            <h5>Botón submit</h5>				
+            <input type="submit" value="ENVIAR" class="btn btn-primary">
+
+          </form>
+        </article>
+
+        <!-- CARDS -->
+        <article id="comp-card">
+          
+            <h1 class="display-4">Cards</h1>
+            <br>
+            <div class="card w-50" >
+              <div class="card-header bg-secondary">
+                <p>ADMINISTRADOR</p>
+              </div>
+              <img src="https://cdn.glitch.com/85f2e012-d081-4c11-8373-e72177a83aa1%2Ffacu-guena.jpg?1556931769151" width="100%">
+              <div class="card-body bg-danger">
+                <p class="card-title font-weight-bold">Facundo</p>
+                <p class="card-text text-center">Programador Web</p>
+                <a href="" class="btn btn-primary btn-block">VER PERFIL</a>
+              </div>
+
+              <div class="card-footer bg-info text-center"><p>Pie de tarjeta</p></div>
+
+            </div>
+        </article>
+      
+      
+      </section>  
+      
+      <!-- BOOTSTRAP VS GRID -->  
+      <section id="grid">
+          
+          <h2 class="display-4"> Grid + Flex</h2>
+          <p>En este ejemplo se pueden ver las secciones distribuídas usando <strong>GRID</strong> y los elementos internos de cada sección están centrados usando <strong>FLEX</strong>.</p>
+          <main>
+            <header>Header</header>
+            <aside>Izquierda</aside>
+            <article>Contenido</article>
+            <aside>Derecha</aside>
+            <footer>Footer</footer>
+          </main>
+      
+      </section>
+        
+  
+      
+        
+        
+        
+        <!-- NO PONGAN HTML ABAJO DE ESTA LÍNEA -->
+        
+        </div> <!-- CIERRE DEL CONTAINER PRINCIPAL -->
+        
+    </body>
+</html>
